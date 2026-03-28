@@ -77,6 +77,6 @@ The application provides clear feedback and validation:
 
 2. Open the project in VS Code and install Live Server from extensions:
 
-3. Right-click ```bash index.html
+3. Right-click index.html
 
 4. Select "Open with Live Server"
