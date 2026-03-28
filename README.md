@@ -35,7 +35,18 @@ The design follows a clean dark theme and is fully responsive across **desktop, 
 
 ---
 
+### Dynamic Content
+
+A dynamic filtering system was implemented for the Projects section.
+
+Users can select a category from a dropdown menu, and the displayed projects update instantly based on the selection. The filtering logic is data-driven, using project categories defined in a separate data file.
+
+If no projects match the selected category, a message is displayed to inform the user.
+
+---
+
 ## Setup Instructions (Run Locally)
 1. Clone the repository:
    ```bash
    git clone https://github.com/YOUR_USERNAME/202322750-ALIALORYD-assignment1.git
+

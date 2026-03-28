@@ -292,6 +292,11 @@ header.scrolled {
   gap: 1.5rem;
   margin-top: 1.25rem;
 }
+.no-projects {
+  margin-top: 1rem;
+  color: var(--secondary-text-color);
+  font-size: 0.9rem;
+}
 
 .card{
   background: rgba(17, 34, 64, 0.7);
@@ -360,6 +365,46 @@ header.scrolled {
 .card-actions{
   display: flex;
   gap: 1rem;
+}
+
+/* Card filter */
+.project-filter {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--accent-color);
+  background-color: var(--background-color);
+  color: var(--main-text-color);
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.project-filter option {
+  background-color: #0A192F;
+  color: #CCD6F6;
+}
+
+.project-filter:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.2);
+}
+
+.filter-label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--secondary-text-color);
+}
+
+.filter-hint {
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: var(--secondary-text-color);
+  opacity: 0.8;
 }
 
 /* =====================================================

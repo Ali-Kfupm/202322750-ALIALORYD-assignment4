@@ -1,4 +1,9 @@
 /* =====================================================
+   import components and data from separate modules
+===================================================== */
+import { renderProjects } from "./component/projects.js";
+import { projectsData } from "./data/projectsData.js";
+/* =====================================================
    CACHE COMMON ELEMENTS
 ===================================================== */
 const header = document.querySelector("header");
@@ -13,7 +18,9 @@ const mobileMenu = document.getElementById("mobileMenu");
 /* =====================================================
    DYNAMIC FOOTER YEAR
 ===================================================== */
-year.textContent = new Date().getFullYear();
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
 
 /* =====================================================
    HEADER SHADOW + ACTIVE NAV LINK
@@ -71,5 +78,73 @@ if (contactForm) {
     e.preventDefault();
     formStatus.textContent = "Thank you. Your message has been prepared successfully.";
     contactForm.reset();
+  });
+}
+
+/* =====================================================
+   RENDER PROJECTS cards
+===================================================== */
+function renderFilterOptions() {
+  const filterSelect = document.getElementById("projectFilter");
+  if (!filterSelect) return;
+
+  filterSelect.innerHTML = "";
+
+  // always include "all"
+  const categories = ["all"];
+
+  // extract unique categories from data
+  projectsData.forEach(project => {
+    if (!categories.includes(project.category)) {
+      categories.push(project.category);
+    }
+  });
+
+  // generate options
+  categories.forEach(cat => {
+    const option = document.createElement("option");
+    option.value = cat;
+
+    // capitalize first letter
+    option.textContent =
+      cat.charAt(0).toUpperCase() + cat.slice(1);
+
+    filterSelect.appendChild(option);
+  });
+}
+
+renderProjects();
+renderFilterOptions();
+
+const filterSelect = document.getElementById("projectFilter");
+
+if (filterSelect) {
+  filterSelect.addEventListener("change", () => {
+    const selected = filterSelect.value;
+    const cards = document.querySelectorAll(".card");
+
+    const noProjectsMessage = document.getElementById("noProjectsMessage");
+
+let visibleCount = 0;
+
+cards.forEach(card => {
+  const category = card.dataset.category;
+
+  if (selected === "all" || category === selected) {
+    card.style.display = "block";
+    visibleCount++;
+  } else {
+    card.style.display = "none";
+  }
+});
+
+// show message if no results
+if (noProjectsMessage) {
+  if (visibleCount === 0) {
+    noProjectsMessage.style.display = "block";
+  } else {
+    noProjectsMessage.style.display = "none";
+  }
+}
   });
 }

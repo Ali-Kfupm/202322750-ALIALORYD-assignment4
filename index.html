@@ -4,7 +4,7 @@
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="stylesheet" href="css/styles.css" />
-      <script src="js/script.js" defer></script>
+      <script type="module" src="js/script.js"></script>
       <title>Ali Aloryd portfolio</title>
     </head>
     <body>
@@ -97,79 +97,15 @@
         <section id="projects" class="section">
           <div class="container">
             <h2 class="section-title"><span class="section-number">02.</span> Projects</h2>
-            <div class="projects-grid">
-              <!-- card start -->
-              <article class="card">
-                <div class="card-image" aria-hidden="true">Project Preview</div>
-                <h3 class="card-title">EzPrint</h3>
-                <p class="card-text">
-                  A printing management system concept with roles, secure release workflow, and admin monitoring ideas.
-                </p>
-                <div class="tags">
-                  <span class="tag">UI</span><span class="tag">Requirements</span>
-                  <span class="tag">Backend</span><span class="tag">Frontend</span>
-                  <span class="tag">Embedded System</span><span class="tag">Network</span>
-                  <span class="tag">System design</span>
-                </div>
-                <div class="card-actions">
-                  <span class="link" aria-label="Project in progress">In progress</span>
-                </div>
-              </article>
-              <!-- card end -->
-               <p>test</p>
-              <!-- card start -->
-              <article class="card">
-                <div class="card-image" aria-hidden="true"><img src="assets/images/KHARJAA.png" alt="KHARJAA project preview"></div>
-                <h3 class="card-title">KHARJAA</h3>
-                <p class="card-text">
-                  KHARJAA is a tourism platform that enables users to plan group trips, explore popular destinations in their area, 
-                  and join professionally organized camping experiences offered by verified trip providers.
-                </p>
-                <div class="tags">
-                  <span class="tag">HTML</span><span class="tag">CSS</span>
-                  <span class="tag">C#</span><span class="tag">ASP.NET</span>
-                  <span class="tag">SQL Server</span><span class="tag">API</span>
-                </div>
-                <div class="card-actions">
-                  <!-- The link not owrking yet because I did not upload the projects in github for now :)-->
-                  <a class="link" href="#" target="_blank" rel="noopener">GitHub</a>
-                </div>
-              </article>
-              <!-- card end -->
-               <!-- card start -->
-              <article class="card">
-                <div class="card-image" aria-hidden="true"><img src="assets/images/QRCode.png" alt="KHARJAA project preview"></div>
-                <h3 class="card-title">QR Attendance</h3>
-                <p class="card-text">
-                  An attendance web system that allows instructors to generate a QR code for each class session and lets students scan it to automatically mark themselves as present. The faculty page manages courses, creates sessions, and tracks attendance.
-                </p>
-                <div class="tags">
-                  <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
-                </div>
-                <div class="card-actions">
-                  <!-- same here :) will be added soon-->
-                  <a class="link" href="#" target="_blank" rel="noopener">Demo</a>
-                  <a class="link" href="#" target="_blank" rel="noopener">GitHub</a>
-                </div>
-              </article>
-              <!-- card end -->
-               <!-- card start -->
-              <article class="card">
-                <div class="card-image" aria-hidden="true"><img src="assets/images/quiz-app.png" alt="Quiz App project preview"></div>
-                <h3 class="card-title">Quiz App</h3>
-                <p class="card-text">
-                  A mobile quiz application that allows users to create custom quizzes, share them with others, and track scores in real time. Users can attempt quizzes created by others and instantly view their results and performance analytics.
-                </p>
-                <div class="tags">
-                  <span class="tag">MAUI</span><span class="tag">C#</span>
-                  <span class="tag">SQLite</span>
-                </div>
-                <div class="card-actions">
-                  <a class="link" href="#" target="_blank" rel="noopener">GitHub</a>
-                </div>
-              </article>
-              <!-- card end -->
-            </div>
+            <!-- Dropdown for filtering projects -->
+            <label for="projectFilter" class="filter-label">Filter projects:</label>
+            <select id="projectFilter" class="project-filter" title="Filter projects by category"></select>
+            <p class="filter-hint">Select a category to view specific projects.</p>
+            <!-- project cards load from project.js -->
+            <div class="projects-grid" id="projectsContainer"></div>
+            <p id="noProjectsMessage" class="no-projects" style="display: none;">
+              No projects found for this category.
+            </p>
           </div>
         </section>
       
