@@ -70,6 +70,12 @@ The application provides clear feedback and validation:
 
 ---
 
+## Live Demo
+
+https://Ali-Kfupm.github.io/202322750-ALIALORYD-assignment2/
+
+---
+
 ## Setup Instructions (Run Locally)
 1. Clone the repository:
    ```bash
