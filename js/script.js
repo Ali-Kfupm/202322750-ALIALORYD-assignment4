@@ -1,40 +1,31 @@
 /* =====================================================
-   HEADER SHADOW ON SCROLL
-   Adds a shadow + blur effect to the fixed header
-   when the user scrolls down the page.
+   CACHE COMMON ELEMENTS
 ===================================================== */
-window.addEventListener("scroll", function () {
-  const header = document.querySelector("header");
-  header.classList.toggle("scrolled", window.scrollY > 50);
-});
-
+const header = document.querySelector("header");
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-links a, .mobile-menu a");
+const year = document.getElementById("year");
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+const menuToggle = document.getElementById("menuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
 
 /* =====================================================
    DYNAMIC FOOTER YEAR
-   Automatically updates the copyright year
-   so it always shows the current year.
 ===================================================== */
-document.getElementById("year").textContent = new Date().getFullYear();
-
+year.textContent = new Date().getFullYear();
 
 /* =====================================================
-   ACTIVE NAVIGATION LINK ON SCROLL
-   Highlights the navbar link that corresponds
-   to the section currently visible on screen.
+   HEADER SHADOW + ACTIVE NAV LINK
+   One optimized scroll listener instead of two
 ===================================================== */
+function handleScroll() {
+  header.classList.toggle("scrolled", window.scrollY > 50);
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-links a");
+  const scrollPosition = window.scrollY + 140;
+  let currentSectionId = "";
 
-window.addEventListener("scroll", () => {
-
-  let current = "";
-
-  // Add offset to compensate for fixed header height
-  const scrollPosition = window.scrollY + 200;
-
-  sections.forEach(section => {
-
+  sections.forEach((section) => {
     const sectionTop = section.offsetTop;
     const sectionHeight = section.offsetHeight;
 
@@ -42,16 +33,43 @@ window.addEventListener("scroll", () => {
       scrollPosition >= sectionTop &&
       scrollPosition < sectionTop + sectionHeight
     ) {
-      current = section.getAttribute("id");
+      currentSectionId = section.id;
     }
   });
 
-  // Update active navigation link
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
+  navLinks.forEach((link) => {
+    const isActive = link.getAttribute("href") === `#${currentSectionId}`;
+    link.classList.toggle("active", isActive);
   });
-});
+}
+
+window.addEventListener("scroll", handleScroll);
+window.addEventListener("load", handleScroll);
+
+/* =====================================================
+   MOBILE MENU TOGGLE
+===================================================== */
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("show");
+    menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("show");
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+/* =====================================================
+   CONTACT FORM FEEDBACK
+===================================================== */
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    formStatus.textContent = "Thank you. Your message has been prepared successfully.";
+    contactForm.reset();
+  });
+}

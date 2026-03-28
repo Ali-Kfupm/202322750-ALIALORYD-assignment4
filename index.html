@@ -29,7 +29,24 @@
           </ul>
           <!-- The resume is not yet done after I do it I will add it to the github and will work without any changes-->
           <a href="assets/resume.pdf" class="resume-btn" target="_blank" rel="noopener">Resume</a>
+          <button
+            id="menuToggle"
+            class="menu-toggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            type="button"
+          >
+            ☰
+          </button>
         </nav>
+        <div id="mobileMenu" class="mobile-menu">
+          <a href="#about"><span class="nav-number">01.</span> About</a>
+          <a href="#projects"><span class="nav-number">02.</span> Projects</a>
+          <a href="#skills"><span class="nav-number">03.</span> Skills</a>
+          <a href="#contact"><span class="nav-number">04.</span> Contact</a>
+          <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </div>
       </header>
       <main>
         <!-- HERO --> 
@@ -43,6 +60,10 @@
             <p class="hero-text">
               Senior Software Engineering student at KFUPM and First-Honor Graduate in Computer Information Technology from DCC.
               Passionate about building structured, maintainable web applications with clean UI architecture and purposeful JavaScript interactivity.
+            </p>
+
+            <p class="hero-guide">
+              Use the navigation bar to explore my background, projects, skills, and contact section.
             </p>
             <!-- hero btns -->
             <div class="hero-actions">
@@ -91,7 +112,7 @@
                   <span class="tag">System design</span>
                 </div>
                 <div class="card-actions">
-                  <a class="link">In progress</a>
+                  <span class="link" aria-label="Project in progress">In progress</span>
                 </div>
               </article>
               <!-- card end -->
@@ -178,7 +199,9 @@
           <div class="container">
             <h2 class="section-title"><span class="section-number">04.</span> Contact</h2>
             <p>Have a question or want to connect? Send me a message:</p>
-          
+            <p class="contact-guide">
+              Fill in your name, email, and message, then click “Send Message” to see a confirmation.
+            </p>
             <form id="contactForm" class="contact-form">
               <label>
                 Name
