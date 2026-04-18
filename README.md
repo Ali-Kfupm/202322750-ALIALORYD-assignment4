@@ -127,6 +127,14 @@ Open `index.html` in a browser.
 
 ---
 
+## ▶️ How to Run
+
+1. Download or clone the repository  
+2. Open `index.html` in your browser  
+3. No installation or backend required  
+
+---
+
 ## 📌 Notes
 - This project uses EmailJS (no backend required)
 - GitHub API is used for dynamic content
