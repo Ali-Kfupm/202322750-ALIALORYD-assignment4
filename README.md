@@ -1,146 +1,95 @@
-# 202322750-ALIALORYD-assignment3
+# Personal Portfolio Web Application – Assignment 4
 
-## 📌 Overview
-This project is a personal portfolio website developed as part of SWE363. It showcases my background, projects, skills, and contact functionality through a structured and interactive web interface.
+## Project Overview
 
-The website is designed with a focus on:
-- Clean UI design
-- Interactive JavaScript features
-- Real-world integration (APIs and email services)
-- Performance optimization
+This project is a professional personal portfolio web application developed as part of Web Engineering Assignment 4. The website showcases my technical skills, academic projects, GitHub repositories, resume, and contact system in a responsive and production-ready format.
+
+The goal of this assignment is to deliver a polished, complete, and deployable web application that demonstrates frontend development skills, clean code practices, responsive design, and professional documentation.
 
 ---
 
-## 🚀 Live Demo
-https://ali-kfupm.github.io/202322750-ALIALORYD-assignment3/
+## Features
+
+### Core Features
+
+- Responsive portfolio website
+- Dark / Light mode toggle with localStorage persistence
+- Dynamic navigation with active section highlighting
+- Mobile-friendly responsive layout
+- Resume download integration
+- Contact form with EmailJS integration
+- GitHub repositories section using GitHub API
+- Dynamic project cards with filtering system
+- Expandable project details ("Show Details")
+- Error handling for API failures and form validation
+
+### Innovation Features
+
+- Smart Contact Form with submission status feedback
+- Automatic confirmation email reply system
+- Dynamic GitHub repositories integration
+- Project filtering with "No Projects Found" handling
+- Improved mobile UX and accessibility support
 
 ---
 
-## 📂 Project Structure
-project-root/
-│── index.html
-│── css/
-│ └── styles.css
-│── js/
-│ ├── script.js
-│ ├── component/
-│ │ └── projects.js
-│ └── data/
-│ └── projectsData.js
-│── assets/
-│ └── images/
-│── docs/
-│ ├── technical-documentation.md
-│ └── ai-usage-report.md
+## Technologies Used
 
----
+### Frontend
 
-## ✨ Features
-
-### 1. Navigation & UI
-- Fixed navigation bar with active section highlighting
-- Smooth scrolling between sections
-- Responsive layout (desktop + mobile)
-- Dark/Light mode toggle with localStorage
-
----
-
-### 2. Projects Section
-- Dynamic rendering using JavaScript
-- Category filtering (All / Web / System / Mobile)
-- “Show Details / Hide Details” toggle for each project
-- Project state is saved using `localStorage`
-
----
-
-### 3. GitHub Integration (NEW)
-- Fetches repositories dynamically using GitHub API
-- Displays latest repositories sorted by update date
-- Shows language, stars, and last updated time
-
----
-
-### 4. Contact Form (Enhanced)
-- Form validation (required fields, email format, message length)
-- Real email sending using EmailJS
-- Auto-reply email sent to user
-- Submission states:
-  - Sending...
-  - Success
-  - Error handling
-
----
-
-### 5. Performance Optimization (NEW)
-- Images resized and compressed (WebP)
-- Lazy loading for project images
-- Added `width` and `height` attributes
-- Optimized rendering behavior
-
----
-
-## 🌐 Compatibility
-- Tested on Chrome, Edge, and mobile browsers
-- Responsive design supports desktop, tablet, and mobile devices
-
----
-
-## 🧭 How to Use the Website (Improved UX)
-
-1. **Start at the Home (Hero) section**
-   - Read a brief introduction
-
-2. **Navigate using the top navbar**
-   - About → background and goals
-   - Projects → view all work
-   - GitHub → latest repositories
-   - Skills → technical abilities
-   - Contact → send a message
-
-3. **Projects Section**
-   - Use the filter dropdown to select a category
-   - Click **“Show Details”** to expand a project
-   - Details will remain open even after refresh
-
-4. **Contact Section**
-   - Fill all fields (Name, Email, Subject, Message)
-   - Click “Send Message”
-   - You will receive a confirmation email
-
----
-
-## 🛠 Technologies Used
 - HTML5
-- CSS3 (Responsive Design + Variables)
-- JavaScript (ES Modules)
-- GitHub REST API
+- CSS3
+- JavaScript (ES6)
+
+### Libraries / Services
+
 - EmailJS
+- GitHub REST API
+- Font Awesome
+- Google Fonts
+
+### Development Tools
+
+- Visual Studio Code
+- Git & GitHub
+- Live Server
+- ChatGPT
+- Claude AI
+- Base44
 
 ---
 
-## 📥 Installation
-
-Clone the repository:
-git clone https://github.com/Ali-Kfupm/202322750-ALIALORYD-assignment3.git
-
-Open `index.html` in a browser.
-
----
-
-## ▶️ How to Run
-
-1. Download or clone the repository  
-2. Open `index.html` in your browser  
-3. No installation or backend required  
-
----
-
-## 📌 Notes
-- This project uses EmailJS (no backend required)
-- GitHub API is used for dynamic content
-- LocalStorage is used for UI state persistence
+## Folder Structure
+portfolio/
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   ├── script.js
+│   ├── component/
+│   └── data/
+├── assets/
+│   └── images/
+├── docs/
+│   ├── ai-usage-report.md
+│   └── technical-documentation.md
+├── presentation/
+│   ├── slides.pdf
+│   └── demo-video.mp4
+└── README.md
 
 ---
 
-## 👤 Author
-Ali Aloryd
+## How to Run Locally
+
+### Option 1 — Live Server (Recommended)
+
+1. Clone the repository
+
+```bash
+git clone [<your-repository-link>](https://github.com/Ali-Kfupm/202322750-ALIALORYD-assignment4
+Open the project in Visual Studio Code
+Install Live Server extension
+Right click index.html
+Select Open with Live Server
+Deployment
